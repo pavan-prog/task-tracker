@@ -1,14 +1,19 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { App } from './app';
+import { Header } from './header/header';
+import { Todo } from './todo/todo';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Header,
+    Todo
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
