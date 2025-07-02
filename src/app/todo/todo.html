@@ -1,18 +1,19 @@
-<div>
-    <form (submit)="insert()">
-        <input
-            type="text"
-            name="inputvalue"
-            placeholder="Enter a task"
-            [(ngModel)]="inputvalue"
-        >
-        <input 
-            type="submit"
-            value="add"
-        >
-    </form>
-    <div *ngFor="let todoname of todoList">
-        <h1>{{todoname}}</h1>
-        <button (click)="removetodo(todoname)">Delete</button>
-    </div>
+<div class="todo-container">
+  <h2>Task Tracker</h2>
+
+  <form (submit)="insert()">
+    <input
+      type="text"
+      name="inputvalue"
+      placeholder="Enter a task"
+      [(ngModel)]="inputvalue"
+      required
+    />
+    <input type="submit" value="Add" />
+  </form>
+
+  <div *ngFor="let todoname of todoList" class="todo-item">
+    <h3>{{ todoname }}</h3>
+    <button (click)="removetodo(todoname)">Delete</button>
+  </div>
 </div>

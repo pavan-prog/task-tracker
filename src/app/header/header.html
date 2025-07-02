@@ -1,3 +1,12 @@
-<h1>
-    TO-DO List
-</h1>
+<!-- Top Navbar -->
+<nav class="navbar">
+  <a routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/todo" routerLinkActive="active-link">Todo List</a>
+  <a routerLink="/room" routerLinkActive="active-link">Room</a>
+</nav>
+
+<!-- Divider -->
+<hr />
+
+<!-- Routed content will appear here -->
+<router-outlet></router-outlet>

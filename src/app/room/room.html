@@ -1,0 +1,56 @@
+
+<div class="container">
+  <h2>Room Expenses Tracker</h2>
+
+  <form (submit)="insert()">
+    <input
+      type="text"
+      placeholder="Name"
+      [(ngModel)]="newEntry.name"
+      name="name"
+      required
+    />
+    <input
+      type="number"
+      placeholder="Money Spent"
+      [(ngModel)]="newEntry.amount"
+      name="amount"
+      required
+    />
+    <input
+      type="text"
+      placeholder="What For"
+      [(ngModel)]="newEntry.purpose"
+      name="purpose"
+      required
+    />
+    <input
+      type="date"
+      [(ngModel)]="newEntry.date"
+      name="date"
+      required
+    />
+    <input type="submit" value="Add" />
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Money Spent</th>
+        <th>What For</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of records; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>₹{{ item.amount }}</td>
+        <td>{{ item.purpose }}</td>
+        <td>{{ item.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
